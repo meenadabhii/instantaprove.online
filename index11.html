@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instantaprove.online Finance - Modern Banking Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/23205137868/native',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/23205137868/native',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/23205137868/native',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2d3748',
+                        accent: '#4299e1',
+                        light: '#f8fafc',
+                        dark: '#1a202c',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a365d"/><path d="M0 0L100 100" stroke="%23ffffff" stroke-width="0.5"/><path d="M100 0L0 100" stroke="%23ffffff" stroke-width="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .nav-active {
+            color: #4299e1;
+            position: relative;
+        }
+
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #4299e1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mr-3">
+                        SF</div>
+                    <span class="text-2xl font-bold text-primary">instantaprove.online <span
+                            class="text-accent">Finance</span></span>
+                </div>
+
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#home" class="nav-link text-primary font-medium hover:text-accent transition nav-active"
+                        data-page="home">Home</a>
+                    <a href="#accounts" class="nav-link text-secondary font-medium hover:text-accent transition"
+                        data-page="accounts">Accounts</a>
+                    <a href="#investing" class="nav-link text-secondary font-medium hover:text-accent transition"
+                        data-page="investing">Investing</a>
+                    <a href="#loans" class="nav-link text-secondary font-medium hover:text-accent transition"
+                        data-page="loans">Loans</a>
+                    <a href="#about" class="nav-link text-secondary font-medium hover:text-accent transition"
+                        data-page="about">About</a>
+                    <a href="#privacy" class="nav-link text-secondary font-medium hover:text-accent transition"
+                        data-page="privacy">Privacy</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Login</button>
+                    <button class="md:hidden text-primary" id="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="hidden py-4 border-t mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link text-primary font-medium" data-page="home">Home</a>
+                    <a href="#accounts" class="nav-link text-secondary font-medium" data-page="accounts">Accounts</a>
+                    <a href="#investing" class="nav-link text-secondary font-medium" data-page="investing">Investing</a>
+                    <a href="#loans" class="nav-link text-secondary font-medium" data-page="loans">Loans</a>
+                    <a href="#about" class="nav-link text-secondary font-medium" data-page="about">About</a>
+                    <a href="#privacy" class="nav-link text-secondary font-medium" data-page="privacy">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+    <script>
+            (function () {
+                // Initialize googletag if not already defined
+                window.googletag = window.googletag || { cmd: [] };
+
+                // Ad slot variables
+                let adSlot1, adSlot2, anchorSlot;
+                const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+                let refreshTimer;
+
+                // Function to set up ads
+                function setupAds() {
+                    googletag.cmd.push(function () {
+                        // Setup PubAds
+                        const pubads = googletag.pubads();
+                        pubads.enableSingleRequest();
+                        pubads.setCentering(true);
+
+                        // Apply geotargeting if available
+                        if (window.geoTarget) {
+                            pubads.setLocation(window.geoTarget);
+                        }
+
+                        // Define Ad Slots with consistent IDs
+                        adSlot1 = googletag.defineSlot(
+                            '/23205137868/native',
+                            [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                            'ad-slot-1'
+                        ).addService(pubads);
+
+                        adSlot2 = googletag.defineSlot(
+                            '/23205137868/native',
+                            [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                            'ad-slot-2'
+                        ).addService(pubads);
+
+                        // Define anchor ad with proper ID
+                        anchorSlot = googletag.defineOutOfPageSlot(
+                            '/23205137868/native',
+                            googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                        );
+
+                        if (anchorSlot) {
+                            anchorSlot.addService(pubads);
+                            // Use the correct ID for the anchor ad
+                            anchorSlot.setElementId('ad-anchor-slot');
+                        }
+
+                        // Event listeners for ad loading
+                        pubads.addEventListener('slotRenderEnded', function (event) {
+                            // Handle ad render events if needed
+                            const slotId = event.slot.getSlotElementId();
+                            const isEmpty = event.isEmpty;
+
+                            // Example: hide containers with no ads
+                            if (isEmpty && document.getElementById(slotId)) {
+                                document.getElementById(slotId).style.display = 'none';
+                            }
+                        });
+
+                        // Enable services
+                        googletag.enableServices();
+
+                        // Display ads
+                        try {
+                            if (document.getElementById('ad-slot-1')) {
+                                googletag.display('ad-slot-1');
+                            }
+                            if (document.getElementById('ad-slot-2')) {
+                                googletag.display('ad-slot-2');
+                            }
+                            if (document.getElementById('ad-anchor-slot')) {
+                                googletag.display('ad-anchor-slot');
+                            }
+                        } catch (error) {
+                            console.log('Error displaying ads:', error);
+                        }
+
+                        // Set up periodic refresh with error handling
+                        setupAdRefresh();
+                    });
+                }
+
+                // Function to handle ad refresh
+                function setupAdRefresh() {
+                    if (refreshTimer) {
+                        clearInterval(refreshTimer);
+                    }
+
+                    refreshTimer = setInterval(function () {
+                        try {
+                            // Only refresh if slots exist and are defined
+                            const slotsToRefresh = [];
+                            if (adSlot1) slotsToRefresh.push(adSlot1);
+                            if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                            if (slotsToRefresh.length > 0) {
+                                googletag.cmd.push(function () {
+                                    googletag.pubads().refresh(slotsToRefresh);
+                                });
+                            }
+                        } catch (error) {
+                            console.log('Error refreshing ads:', error);
+                            clearInterval(refreshTimer); // Stop trying on persistent errors
+                        }
+                    }, refreshInterval);
+                }
+
+                // Check for ad blockers (simple detection)
+                function checkAdBlocker() {
+                    const testAd = document.createElement('div');
+                    testAd.innerHTML = '&nbsp;';
+                    testAd.className = 'adsbox';
+                    document.body.appendChild(testAd);
+
+                    setTimeout(function () {
+                        if (testAd.offsetHeight === 0) {
+                            console.log('Ad blocker detected');
+                            // You can show a message to users or implement fallback content
+                        }
+                        document.body.removeChild(testAd);
+                    }, 100);
+                }
+
+                // Initialize ads when DOM is ready
+                if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                    setupAds();
+                    checkAdBlocker();
+                } else {
+                    document.addEventListener('DOMContentLoaded', function () {
+                        setupAds();
+                        checkAdBlocker();
+                    });
+                }
+
+                // Clean up on page unload
+                window.addEventListener('beforeunload', function () {
+                    if (refreshTimer) {
+                        clearInterval(refreshTimer);
+                    }
+                });
+            })();
+
+    </script>
+
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+    <!-- ads  -->
+    <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+        <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+    </div>
+    <main>
+        <!-- Home Page -->
+        <section id="home-section" class="page-section active">
+            <!-- Hero Section -->
+            <section class="hero-bg text-white py-20">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-10 md:mb-0">
+                            <h1 class="text-4xl md:text-5xl font-bold mb-6">Modern Banking Solutions for Your Financial
+                                Freedom</h1>
+                            <p class="text-xl mb-8">Experience next-generation banking with personalized services,
+                                competitive rates, and innovative financial tools.</p>
+                            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                                <button
+                                    class="bg-accent hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-medium transition duration-300">Open
+                                    an Account</button>
+                                <button
+                                    class="bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-medium transition duration-300">Learn
+                                    More</button>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center">
+                            <div class="relative bg-white text-primary p-6 rounded-2xl shadow-2xl max-w-md w-full">
+                                <div class="absolute -inset-2 bg-accent rounded-2xl -z-10 opacity-30"></div>
+                                <h3 class="text-2xl font-bold mb-4">Digital Banking Dashboard</h3>
+                                <div class="bg-gray-100 p-4 rounded-xl mb-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span>Total Balance</span>
+                                        <span class="font-bold">$42,580.75</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm text-gray-600">
+                                        <span>**** 4589</span>
+                                        <span>08/25</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <button class="bg-primary text-white py-2 rounded-lg">Transfer</button>
+                                    <button class="bg-gray-200 text-primary py-2 rounded-lg">Pay Bills</button>
+                                </div>
+                                <div class="text-center text-sm">
+                                    <p>Recent Transaction: Transfer to John D. - $250.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-16 bg-light">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Why Choose instantaprove.online Finance?
+                    </h2>
+                    <p class="text-center text-secondary max-w-2xl mx-auto mb-12">We provide innovative financial
+                        solutions tailored to your unique needs and goals.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div
+                                class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-accent text-2xl mb-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Advanced Security</h3>
+                            <p class="text-secondary">Bank-level encryption, multi-factor authentication, and 24/7 fraud
+                                monitoring to keep your assets safe.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div
+                                class="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-accent text-2xl mb-4">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Smart Investing</h3>
+                            <p class="text-secondary">Access to expert portfolio management and AI-driven investment
+                                recommendations for optimal returns.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div
+                                class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-accent text-2xl mb-4">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Instant Transfers</h3>
+                            <p class="text-secondary">Send and receive money globally with minimal fees and real-time
+                                exchange rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ads  -->
+            <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+            </div>
+
+
+            <!-- Accounts Section -->
+            <section class="py-16">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Banking Solutions</h2>
+                    <p class="text-center text-secondary max-w-2xl mx-auto mb-12">Choose from our range of account
+                        options designed for every financial need.</p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="bg-gradient-to-r from-primary to-accent text-white p-8 rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-4">Premium Checking</h3>
+                            <p class="mb-6">Enjoy premium benefits with our highest-tier checking account designed for
+                                clients who maintain higher balances.</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-300"></i> No
+                                    monthly maintenance fees</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-300"></i>
+                                    2.75% APY on balances over $10,000</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-300"></i>
+                                    Unlimited domestic ATM fee reimbursements</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle mr-2 text-green-300"></i>
+                                    Priority customer service</li>
+                            </ul>
+                            <button
+                                class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Learn
+                                More</button>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-accent text-xl mb-4">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-primary">Savings Accounts</h3>
+                                <p class="text-secondary mb-4">Maximize your savings with competitive interest rates and
+                                    no hidden fees.</p>
+                                <a href="#accounts" class="nav-link text-accent font-medium flex items-center"
+                                    data-page="accounts">Explore <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-accent text-xl mb-4">
+                                    <i class="fas fa-landmark"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-primary">Money Market</h3>
+                                <p class="text-secondary mb-4">Higher yields with check-writing privileges and debit
+                                    card access.</p>
+                                <a href="#accounts" class="nav-link text-accent font-medium flex items-center"
+                                    data-page="accounts">Explore <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-accent text-xl mb-4">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-primary">Student Banking</h3>
+                                <p class="text-secondary mb-4">Special accounts designed for students with no monthly
+                                    fees.</p>
+                                <a href="#accounts" class="nav-link text-accent font-medium flex items-center"
+                                    data-page="accounts">Explore <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-accent text-xl mb-4">
+                                    <i class="fas fa-retirement"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-primary">Retirement Accounts</h3>
+                                <p class="text-secondary mb-4">Plan for your future with our IRA options and retirement
+                                    planning services.</p>
+                                <a href="#accounts" class="nav-link text-accent font-medium flex items-center"
+                                    data-page="accounts">Explore <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="py-16 bg-primary text-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="stat-card bg-white bg-opacity-10 p-6 rounded-xl text-center">
+                            <div class="text-4xl font-bold mb-2">2M+</div>
+                            <p class="text-blue-100">Happy Customers</p>
+                        </div>
+
+                        <div class="stat-card bg-white bg-opacity-10 p-6 rounded-xl text-center">
+                            <div class="text-4xl font-bold mb-2">$85B+</div>
+                            <p class="text-blue-100">Assets Managed</p>
+                        </div>
+
+                        <div class="stat-card bg-white bg-opacity-10 p-6 rounded-xl text-center">
+                            <div class="text-4xl font-bold mb-2">185+</div>
+                            <p class="text-blue-100">Global Branches</p>
+                        </div>
+
+                        <div class="stat-card bg-white bg-opacity-10 p-6 rounded-xl text-center">
+                            <div class="text-4xl font-bold mb-2">98%</div>
+                            <p class="text-blue-100">Customer Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- App Section -->
+            <section class="py-16">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 mb-10 md:mb-0">
+                            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Banking On The Go</h2>
+                            <p class="text-secondary mb-6">Manage your finances from anywhere with our award-winning
+                                mobile banking app. Deposit checks, pay bills, transfer money, and monitor your accounts
+                                with just a few taps.</p>
+
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <p>Mobile check deposit with instant confirmation</p>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <p>Biometric login for enhanced security</p>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mr-4">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <p>Real-time spending insights and budgeting tools</p>
+                                </div>
+                            </div>
+
+                            <div class="flex space-x-4">
+                                <button class="flex items-center bg-dark text-white px-5 py-3 rounded-lg">
+                                    <i class="fab fa-apple text-2xl mr-2"></i>
+                                    <div>
+                                        <div class="text-xs">Download on the</div>
+                                        <div class="font-medium">App Store</div>
+                                    </div>
+                                </button>
+
+                                <button class="flex items-center bg-dark text-white px-5 py-3 rounded-lg">
+                                    <i class="fab fa-google-play text-xl mr-2"></i>
+                                    <div>
+                                        <div class="text-xs">Get it on</div>
+                                        <div class="font-medium">Google Play</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="md:w-1/2 flex justify-center">
+                            <div class="relative max-w-sm">
+                                <div
+                                    class="absolute -inset-4 bg-gradient-to-tr from-accent to-primary rounded-2xl -z-10 opacity-30 rotate-6">
+                                </div>
+                                <div class="bg-gray-800 rounded-2xl p-4 w-72 mx-auto">
+                                    <div class="bg-gray-900 rounded-xl overflow-hidden">
+                                        <div class="bg-primary p-4 text-white flex justify-between items-center">
+                                            <div>
+                                                <div class="text-xs">instantaprove.online Finance</div>
+                                                <div class="font-medium">Checking Account</div>
+                                            </div>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </div>
+
+                                        <div class="p-4">
+                                            <div class="text-white text-2xl font-bold mb-6">$8,450.75</div>
+
+                                            <div class="flex justify-between text-white text-sm mb-4">
+                                                <div>**** 4589</div>
+                                                <div>08/25</div>
+                                            </div>
+
+                                            <div class="flex justify-between mb-6">
+                                                <div class="text-center">
+                                                    <div
+                                                        class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white mx-auto mb-2">
+                                                        <i class="fas fa-exchange-alt"></i>
+                                                    </div>
+                                                    <div class="text-xs text-white">Transfer</div>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <div
+                                                        class="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center text-white mx-auto mb-2">
+                                                        <i class="fas fa-money-bill-wave"></i>
+                                                    </div>
+                                                    <div class="text-xs text-white">Pay</div>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <div
+                                                        class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white mx-auto mb-2">
+                                                        <i class="fas fa-chart-line"></i>
+                                                    </div>
+                                                    <div class="text-xs text-white">Invest</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-white text-sm mb-2">Recent Transactions</div>
+                                            <div class="space-y-3">
+                                                <div class="flex justify-between items-center text-xs">
+                                                    <div>Netflix Subscription</div>
+                                                    <div class="text-red-400">-$15.99</div>
+                                                </div>
+                                                <div class="flex justify-between items-center text-xs">
+                                                    <div>Starbucks Coffee</div>
+                                                    <div class="text-red-400">-$5.75</div>
+                                                </div>
+                                                <div class="flex justify-between items-center text-xs">
+                                                    <div>Salary Deposit</div>
+                                                    <div class="text-green-400">+$4,250.00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="py-16 bg-light">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">What Our Clients Say</h2>
+                    <p class="text-center text-secondary max-w-2xl mx-auto mb-12">Don't just take our word for it - hear
+                        from our satisfied customers.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                                <div>
+                                    <div class="font-bold">Robert Johnson</div>
+                                    <div class="text-sm text-accent">Business Owner</div>
+                                </div>
+                            </div>
+                            <p class="text-secondary">"instantaprove.online Finance has transformed how I manage my business
+                                finances. Their commercial banking solutions are unmatched in the industry."</p>
+                            <div class="flex mt-4 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                                <div>
+                                    <div class="font-bold">Sarah Williams</div>
+                                    <div class="text-sm text-accent">Financial Analyst</div>
+                                </div>
+                            </div>
+                            <p class="text-secondary">"The investment options and retirement planning services have
+                                helped me secure my financial future. I couldn't be happier with their expertise."</p>
+                            <div class="flex mt-4 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 rounded-full bg-gray-200 mr-4"></div>
+                                <div>
+                                    <div class="font-bold">Michael Chen</div>
+                                    <div class="text-sm text-accent">Software Engineer</div>
+                                </div>
+                            </div>
+                            <p class="text-secondary">"The mobile app is incredible! I can handle all my banking needs
+                                in one place with a beautiful interface that's both intuitive and powerful."</p>
+                            <div class="flex mt-4 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-16 bg-accent text-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Take Control of Your Financial Future?</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-8">Join thousands of satisfied customers who have already
+                        experienced the instantaprove.online Finance difference.</p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button
+                            class="bg-white text-accent px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition">Open
+                            an Account</button>
+                        <button
+                            class="bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-800 transition">Contact
+                            Us</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Accounts Page -->
+        <section id="accounts-section" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <h1 class="text-4xl font-bold text-primary mb-6">Banking Accounts</h1>
+                <p class="text-xl text-secondary mb-12">Find the perfect account for your financial needs with our range
+                    of personal and business banking solutions.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Personal Banking</h2>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Everyday Checking</h3>
+                                    <p class="text-secondary">Perfect for daily transactions with no monthly fees</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> No
+                                    minimum balance requirement</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Free
+                                    online banking and bill pay</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Mobile
+                                    check deposit</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Contactless debit card</li>
+                            </ul>
+                            <button
+                                class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Open
+                                Account</button>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-piggy-bank"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">High-Yield Savings</h3>
+                                    <p class="text-secondary">Maximize your savings with competitive interest rates</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 3.25% APY
+                                    on all balances</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> No
+                                    monthly maintenance fees</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> FDIC
+                                    insured up to $250,000</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Automatic
+                                    savings plans</li>
+                            </ul>
+                            <button
+                                class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Open
+                                Account</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Business Banking</h2>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Business Checking</h3>
+                                    <p class="text-secondary">Essential banking for small businesses</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 500 free
+                                    transactions per month</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Free
+                                    online banking and bill pay</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Business
+                                    debit card</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Merchant
+                                    services integration</li>
+                            </ul>
+                            <button
+                                class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Open
+                                Account</button>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Business Money Market</h3>
+                                    <p class="text-secondary">Higher yields for business savings</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 3.75% APY
+                                    on balances over $25,000</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Check-writing privileges</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Tiered
+                                    interest rates</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Online
+                                    account management</li>
+                            </ul>
+                            <button
+                                class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Open
+                                Account</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-primary to-accent text-white p-8 rounded-2xl mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Compare Account Features</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-blue-300">
+                                    <th class="pb-4">Account Type</th>
+                                    <th class="pb-4">APY</th>
+                                    <th class="pb-4">Minimum Deposit</th>
+                                    <th class="pb-4">Monthly Fee</th>
+                                    <th class="pb-4">ATM Access</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-blue-300">
+                                    <td class="py-4">Everyday Checking</td>
+                                    <td class="py-4">0.10%</td>
+                                    <td class="py-4">$25</td>
+                                    <td class="py-4">None</td>
+                                    <td class="py-4">Nationwide</td>
+                                </tr>
+                                <tr class="border-b border-blue-300">
+                                    <td class="py-4">Premium Checking</td>
+                                    <td class="py-4">2.75%</td>
+                                    <td class="py-4">$1,000</td>
+                                    <td class="py-4">$25 (waivable)</td>
+                                    <td class="py-4">Global</td>
+                                </tr>
+                                <tr class="border-b border-blue-300">
+                                    <td class="py-4">High-Yield Savings</td>
+                                    <td class="py-4">3.25%</td>
+                                    <td class="py-4">$100</td>
+                                    <td class="py-4">None</td>
+                                    <td class="py-4">Limited</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4">Money Market</td>
+                                    <td class="py-4">3.75%</td>
+                                    <td class="py-4">$2,500</td>
+                                    <td class="py-4">$12 (waivable)</td>
+                                    <td class="py-4">Nationwide</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Account Opening Process</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Choose Account</h3>
+                            <p class="text-secondary">Select the account that best fits your financial needs</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Apply Online</h3>
+                            <p class="text-secondary">Complete our secure online application in minutes</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Verify Identity</h3>
+                            <p class="text-secondary">Provide identification documents for verification</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Fund Account</h3>
+                            <p class="text-secondary">Make your initial deposit to activate your account</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investing Page -->
+        <section id="investing-section" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <h1 class="text-4xl font-bold text-primary mb-6">Investment Services</h1>
+                <p class="text-xl text-secondary mb-12">Grow your wealth with our comprehensive investment solutions and
+                    expert financial guidance.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="lg:col-span-2">
+                        <h2 class="text-3xl font-bold text-primary mb-6">Our Investment Approach</h2>
+                        <p class="text-secondary mb-6">At instantaprove.online Finance, we believe in a personalized approach to
+                            investing. Our team of financial experts works with you to understand your goals, risk
+                            tolerance, and time horizon to create a customized investment strategy.</p>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-bold text-primary mb-4">Diversified Portfolio Management</h3>
+                            <p class="text-secondary mb-4">We build diversified portfolios designed to weather market
+                                volatility while pursuing growth opportunities across various asset classes:</p>
+                            <ul class="grid grid-cols-2 gap-4">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Stocks & ETFs</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Bonds & Fixed Income</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Mutual Funds</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Real Estate (REITs)</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Commodities</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Alternative Investments</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-primary to-accent text-white p-8 rounded-2xl h-fit">
+                        <h3 class="text-2xl font-bold mb-6">Investment Performance</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Conservative Portfolio</span>
+                                    <span class="font-bold">+5.2%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-green-400 h-2.5 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Moderate Portfolio</span>
+                                    <span class="font-bold">+8.7%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-blue-400 h-2.5 rounded-full" style="width: 78%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Growth Portfolio</span>
+                                    <span class="font-bold">+12.4%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Aggressive Portfolio</span>
+                                    <span class="font-bold">+15.8%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                    <div class="bg-red-400 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-sm mt-4 text-blue-100">*Annual returns as of last quarter. Past performance does
+                            not guarantee future results.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-primary mb-6">Investment Options</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-accent text-xl mr-4">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary">Managed Portfolios</h3>
+                                <p class="text-secondary">Professional management for hands-off investors</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Customized
+                                asset allocation</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Continuous
+                                monitoring and rebalancing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Tax-efficient
+                                strategies</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Dedicated
+                                financial advisor</li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Learn
+                            More</button>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-accent text-xl mr-4">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary">Robo-Advisory</h3>
+                                <p class="text-secondary">Algorithm-driven investing with low fees</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Low 0.25%
+                                management fee</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Automated
+                                rebalancing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Goal-based
+                                investing</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 24/7 account
+                                access</li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Learn
+                            More</button>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-accent text-xl mr-4">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary">Retirement Planning</h3>
+                                <p class="text-secondary">Secure your financial future with tailored plans</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> IRA, Roth
+                                IRA, and 401(k) options</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Retirement
+                                income strategies</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Social
+                                Security optimization</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Required
+                                Minimum Distribution (RMD) services</li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Learn
+                            More</button>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-accent text-xl mr-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary">Education Planning</h3>
+                                <p class="text-secondary">Save for education expenses with tax advantages</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 529 College
+                                Savings Plans</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Custodial
+                                accounts (UTMA/UGMA)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Education
+                                savings strategies</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Financial aid
+                                planning</li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Learn
+                            More</button>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-2xl p-8 mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Ready to Start Investing?</h2>
+                    <p class="text-xl text-secondary mb-8">Schedule a free consultation with one of our financial
+                        advisors to discuss your investment goals.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button
+                            class="bg-primary text-white px-8 py-4 rounded-lg font-medium hover:bg-accent transition">Schedule
+                            Consultation</button>
+                        <button
+                            class="bg-white text-primary border border-primary px-8 py-4 rounded-lg font-medium hover:bg-gray-50 transition">Download
+                            Investment Guide</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loans Page -->
+        <section id="loans-section" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <h1 class="text-4xl font-bold text-primary mb-6">Loan Solutions</h1>
+                <p class="text-xl text-secondary mb-12">Find the right financing option for your needs with competitive
+                    rates and flexible terms.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Personal Loans</h2>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Home Loans</h3>
+                                    <p class="text-secondary">Mortgage solutions for home buyers and owners</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Competitive fixed and adjustable rates</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Low down
+                                    payment options</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Refinancing solutions</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Pre-approval in as little as 24 hours</li>
+                            </ul>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="text-sm text-secondary">Starting at</div>
+                                    <div class="text-xl font-bold text-primary">6.25% APR</div>
+                                </div>
+                                <button
+                                    class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Apply
+                                    Now</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Auto Loans</h3>
+                                    <p class="text-secondary">Financing for new and used vehicles</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Competitive rates for qualified buyers</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Pre-approval without impacting credit score</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Flexible
+                                    terms from 12 to 72 months</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Fast
+                                    funding after approval</li>
+                            </ul>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="text-sm text-secondary">Starting at</div>
+                                    <div class="text-xl font-bold text-primary">5.99% APR</div>
+                                </div>
+                                <button
+                                    class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Apply
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-6">Business Loans</h2>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Commercial Real Estate</h3>
+                                    <p class="text-secondary">Financing for business properties</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Office,
+                                    retail, and industrial properties</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Loan-to-value ratios up to 80%</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Terms
+                                    from 5 to 25 years</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>
+                                    Interest-only options available</li>
+                            </ul>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="text-sm text-secondary">Starting at</div>
+                                    <div class="text-xl font-bold text-primary">7.25% APR</div>
+                                </div>
+                                <button
+                                    class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Apply
+                                    Now</button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6 card-hover">
+                            <div class="flex items-start mb-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-primary">Small Business Loans</h3>
+                                    <p class="text-secondary">Capital to start or grow your business</p>
+                                </div>
+                            </div>
+                            <ul class="space-y-2 mb-4">
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Term
+                                    loans and lines of credit</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> SBA loan
+                                    options</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Equipment
+                                    financing</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Working
+                                    capital solutions</li>
+                            </ul>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <div class="text-sm text-secondary">Starting at</div>
+                                    <div class="text-xl font-bold text-primary">8.50% APR</div>
+                                </div>
+                                <button
+                                    class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-accent transition">Apply
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-primary to-accent text-white p-8 rounded-2xl mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Loan Calculator</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="mb-6">
+                                <label class="block mb-2">Loan Amount</label>
+                                <input type="range" min="1000" max="100000" step="1000" value="25000"
+                                    class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between mt-1">
+                                    <span>$1,000</span>
+                                    <span id="loan-amount-value">$25,000</span>
+                                    <span>$100,000</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block mb-2">Interest Rate</label>
+                                <input type="range" min="1" max="20" step="0.1" value="7.5"
+                                    class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between mt-1">
+                                    <span>1%</span>
+                                    <span id="interest-rate-value">7.5%</span>
+                                    <span>20%</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block mb-2">Loan Term</label>
+                                <input type="range" min="1" max="30" step="1" value="5"
+                                    class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer">
+                                <div class="flex justify-between mt-1">
+                                    <span>1 year</span>
+                                    <span id="loan-term-value">5 years</span>
+                                    <span>30 years</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white bg-opacity-20 p-6 rounded-xl">
+                            <h3 class="text-xl font-bold mb-4">Payment Summary</h3>
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span>Monthly Payment:</span>
+                                    <span class="font-bold" id="monthly-payment">$501.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Total Interest:</span>
+                                    <span class="font-bold" id="total-interest">$5,060.00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Total Payment:</span>
+                                    <span class="font-bold" id="total-payment">$30,060.00</span>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full bg-white text-primary mt-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Apply
+                                for This Loan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Loan Application Process</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Pre-Qualification</h3>
+                            <p class="text-secondary">Check your eligibility without impacting your credit score</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Application</h3>
+                            <p class="text-secondary">Complete our secure online application in minutes</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Documentation</h3>
+                            <p class="text-secondary">Provide required documents for verification</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Approval & Funding</h3>
+                            <p class="text-secondary">Receive decision and get funds deposited quickly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about-section" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <h1 class="text-4xl font-bold text-primary mb-6">About instantaprove.online Finance</h1>
+                <p class="text-xl text-secondary mb-12">For over 25 years, we've been helping individuals and businesses
+                    achieve their financial goals with innovative solutions and personalized service.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="lg:col-span-2">
+                        <h2 class="text-3xl font-bold text-primary mb-6">Our Story</h2>
+                        <p class="text-secondary mb-6">Founded in 1998, instantaprove.online Finance began as a small community bank
+                            with a vision to make banking more accessible and personalized. Today, we've grown into a
+                            leading financial institution serving over 2 million customers nationwide, while still
+                            maintaining our commitment to personalized service and community involvement.</p>
+
+                        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+                            <h3 class="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+                            <p class="text-secondary mb-4">To empower our customers to achieve their financial goals
+                                through innovative banking solutions, expert guidance, and exceptional service built on
+                                trust and transparency.</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-accent text-xl mr-4">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-primary">Our Vision</h4>
+                                    <p class="text-secondary">To be the most trusted financial partner for individuals
+                                        and businesses, known for innovation, integrity, and exceptional customer
+                                        experiences.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-b from-primary to-accent text-white p-8 rounded-2xl h-fit">
+                        <h3 class="text-2xl font-bold mb-6">Key Milestones</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="font-bold text-lg">1998</div>
+                                <p>Founded as Community Trust Bank with first branch in San Francisco</p>
+                            </div>
+
+                            <div>
+                                <div class="font-bold text-lg">2005</div>
+                                <p>Launched online banking platform, serving customers nationwide</p>
+                            </div>
+
+                            <div>
+                                <div class="font-bold text-lg">2012</div>
+                                <p>Rebranded as instantaprove.online Finance with focus on digital innovation</p>
+                            </div>
+
+                            <div>
+                                <div class="font-bold text-lg">2018</div>
+                                <p>Reached 1 million customers and $50B in assets under management</p>
+                            </div>
+
+                            <div>
+                                <div class="font-bold text-lg">2023</div>
+                                <p>Expanded to over 185 branches with 2M+ customers nationwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-primary mb-6">Leadership Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Robert Mitchell</h3>
+                        <p class="text-accent font-medium mb-4">Chief Executive Officer</p>
+                        <p class="text-secondary">With over 30 years of experience in the financial industry, Robert
+                            leads instantaprove.online's strategic vision and growth initiatives.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Sarah Johnson</h3>
+                        <p class="text-accent font-medium mb-4">Chief Financial Officer</p>
+                        <p class="text-secondary">Sarah brings extensive expertise in financial management and strategic
+                            planning to drive sustainable growth.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Michael Chen</h3>
+                        <p class="text-accent font-medium mb-4">Chief Technology Officer</p>
+                        <p class="text-secondary">Michael leads our technology innovation, ensuring secure and
+                            cutting-edge digital banking experiences.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover">
+                        <div class="w-24 h-24 rounded-full bg-gray-200 mx-auto mb-4"></div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Lisa Williams</h3>
+                        <p class="text-accent font-medium mb-4">Chief Marketing Officer</p>
+                        <p class="text-secondary">Lisa drives brand strategy and customer engagement initiatives to
+                            enhance our market presence.</p>
+                    </div>
+                </div>
+
+                <div class="bg-light rounded-2xl p-8 mb-16">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Corporate Responsibility</h2>
+                    <p class="text-xl text-secondary mb-8">We're committed to making a positive impact in the
+                        communities we serve through financial education, environmental sustainability, and community
+                        support.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Environmental Sustainability</h3>
+                            <p class="text-secondary">Committed to carbon neutrality by 2025 and sustainable banking
+                                practices</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Financial Education</h3>
+                            <p class="text-secondary">Providing free financial literacy programs to schools and
+                                communities</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-accent text-2xl mx-auto mb-4">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-primary">Community Support</h3>
+                            <p class="text-secondary">Donating 1% of annual profits to local community organizations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Careers at instantaprove.online</h2>
+                    <p class="text-xl text-secondary mb-8">Join our team of passionate professionals dedicated to
+                        transforming the banking experience.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl shadow-md p-6">
+                            <h3 class="text-2xl font-bold text-primary mb-4">Why Work With Us</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Competitive compensation and benefits</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Opportunities for professional growth</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Inclusive and diverse workplace culture</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Innovative projects and technologies</li>
+                                <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    Work-life balance initiatives</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-primary to-accent text-white p-8 rounded-2xl">
+                            <h3 class="text-2xl font-bold mb-6">Current Openings</h3>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold">Senior Financial Analyst</div>
+                                        <div class="text-blue-100">San Francisco, CA</div>
+                                    </div>
+                                    <button
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-medium">Apply</button>
+                                </div>
+
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold">Software Developer</div>
+                                        <div class="text-blue-100">Remote</div>
+                                    </div>
+                                    <button
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-medium">Apply</button>
+                                </div>
+
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold">Branch Manager</div>
+                                        <div class="text-blue-100">New York, NY</div>
+                                    </div>
+                                    <button
+                                        class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-medium">Apply</button>
+                                </div>
+                            </div>
+                            <a href="#" class="text-white font-medium underline">View all career opportunities</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Policy Page -->
+        <section id="privacy-section" class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <h1 class="text-4xl font-bold text-primary mb-6">Privacy Policy</h1>
+                <p class="text-xl text-secondary mb-12">Last updated: August 15, 2023</p>
+
+                <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+                    <p class="text-secondary mb-6">At instantaprove.online Finance, we are committed to protecting your privacy and
+                        ensuring the security of your personal information. This Privacy Policy explains how we collect,
+                        use, disclose, and safeguard your information when you use our services.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Information We Collect</h2>
+                    <p class="text-secondary mb-6">We collect information that you provide directly to us, as well as
+                        information automatically collected when you use our services:</p>
+
+                    <h3 class="text-xl font-bold text-primary mb-3">Personal Information</h3>
+                    <ul class="list-disc pl-6 text-secondary mb-6">
+                        <li class="mb-2">Contact information (name, email address, phone number, physical address)</li>
+                        <li class="mb-2">Identification information (Social Security number, driver's license, passport)
+                        </li>
+                        <li class="mb-2">Financial information (income, assets, account balances, transaction history)
+                        </li>
+                        <li class="mb-2">Employment information (employer name, job title, income)</li>
+                    </ul>
+
+                    <h3 class="text-xl font-bold text-primary mb-3">Automatically Collected Information</h3>
+                    <ul class="list-disc pl-6 text-secondary mb-6">
+                        <li class="mb-2">Device information (IP address, browser type, operating system)</li>
+                        <li class="mb-2">Usage data (pages visited, time spent, features used)</li>
+                        <li class="mb-2">Location information (general location based on IP address)</li>
+                        <li class="mb-2">Cookies and similar technologies</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">How We Use Your Information</h2>
+                    <p class="text-secondary mb-4">We use the information we collect for various purposes, including:
+                    </p>
+                    <ul class="list-disc pl-6 text-secondary mb-6">
+                        <li class="mb-2">Providing, maintaining, and improving our services</li>
+                        <li class="mb-2">Processing transactions and sending related information</li>
+                        <li class="mb-2">Personalizing your experience and providing content recommendations</li>
+                        <li class="mb-2">Detecting, preventing, and addressing technical issues and security risks</li>
+                        <li class="mb-2">Complying with legal obligations and regulatory requirements</li>
+                        <li class="mb-2">Communicating with you about products, services, offers, and events</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Information Sharing and Disclosure</h2>
+                    <p class="text-secondary mb-4">We may share your information with:</p>
+                    <ul class="list-disc pl-6 text-secondary mb-6">
+                        <li class="mb-2">Service providers who perform services on our behalf</li>
+                        <li class="mb-2">Financial institutions and payment processors</li>
+                        <li class="mb-2">Credit bureaus and identity verification services</li>
+                        <li class="mb-2">Legal and regulatory authorities when required by law</li>
+                        <li class="mb-2">Business partners with your consent</li>
+                    </ul>
+                    <p class="text-secondary mb-6">We do not sell your personal information to third parties for their
+                        marketing purposes.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Data Security</h2>
+                    <p class="text-secondary mb-6">We implement appropriate security measures to protect your
+                        information, including encryption, access controls, and secure servers. However, no method of
+                        transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee
+                        absolute security.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Your Rights and Choices</h2>
+                    <p class="text-secondary mb-4">Depending on your location, you may have the following rights
+                        regarding your personal information:</p>
+                    <ul class="list-disc pl-6 text-secondary mb-6">
+                        <li class="mb-2">Access and receive a copy of your personal information</li>
+                        <li class="mb-2">Correct inaccurate or incomplete information</li>
+                        <li class="mb-2">Delete your personal information under certain circumstances</li>
+                        <li class="mb-2">Restrict or object to the processing of your information</li>
+                        <li class="mb-2">Data portability rights</li>
+                        <li class="mb-2">Withdraw consent where we rely on consent for processing</li>
+                    </ul>
+                    <p class="text-secondary mb-6">To exercise these rights, please contact us using the information
+                        provided in the "Contact Us" section.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Cookies and Tracking Technologies</h2>
+                    <p class="text-secondary mb-6">We use cookies and similar technologies to collect information about
+                        your browsing activities and to remember your preferences. You can control cookies through your
+                        browser settings and other tools.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Children's Privacy</h2>
+                    <p class="text-secondary mb-6">Our services are not intended for children under the age of 18. We do
+                        not knowingly collect personal information from children under 18. If we become aware that we
+                        have collected personal information from a child under 18, we will take steps to delete such
+                        information.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Changes to This Privacy Policy</h2>
+                    <p class="text-secondary mb-6">We may update our Privacy Policy from time to time. We will notify
+                        you of any changes by posting the new Privacy Policy on this page and updating the "Last
+                        updated" date. We encourage you to review this Privacy Policy periodically for any changes.</p>
+
+                    <h2 class="text-2xl font-bold text-primary mb-4">Contact Us</h2>
+                    <p class="text-secondary mb-2">If you have any questions about this Privacy Policy, please contact
+                        us:</p>
+                    <ul class="list-disc pl-6 text-secondary mb-6">
+                        <li class="mb-2">By email: privacy@instantaprove.online.com</li>
+                        <li class="mb-2">By phone: 1-800-instantaprove.online</li>
+                    </ul>
+                </div>
+
+                <div class="bg-light rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold text-primary mb-6">Additional Disclosures</h2>
+
+                    <h3 class="text-xl font-bold text-primary mb-4">California Privacy Rights</h3>
+                    <p class="text-secondary mb-6">California residents have certain rights under the California
+                        Consumer Privacy Act (CCPA). These include the right to know what personal information we
+                        collect, use, and disclose, and the right to request deletion of their personal information.</p>
+
+                    <h3 class="text-xl font-bold text-primary mb-4">European Union Data Subjects</h3>
+                    <p class="text-secondary mb-6">EU data subjects have certain rights under the General Data
+                        Protection Regulation (GDPR), including the right to access, rectify, erase, restrict processing
+                        of, and port their personal data.</p>
+
+                    <h3 class="text-xl font-bold text-primary mb-4">Data Retention</h3>
+                    <p class="text-secondary mb-6">We retain your personal information for as long as necessary to
+                        fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is
+                        required or permitted by law.</p>
+
+                    <h3 class="text-xl font-bold text-primary mb-4">International Transfers</h3>
+                    <p class="text-secondary">Your information may be transferred to and processed in countries other
+                        than your country of residence. We ensure appropriate safeguards are in place to protect your
+                        information in accordance with this Privacy Policy.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg mr-3">
+                            SF</div>
+                        <span class="text-xl font-bold">instantaprove.online <span class="text-accent">Finance</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Providing innovative financial solutions for individuals and
+                        businesses since 1998.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="nav-link text-gray-400 hover:text-white" data-page="home">Home</a>
+                        </li>
+                        <li><a href="#accounts" class="nav-link text-gray-400 hover:text-white"
+                                data-page="accounts">Accounts</a></li>
+                        <li><a href="#investing" class="nav-link text-gray-400 hover:text-white"
+                                data-page="investing">Investing</a></li>
+                        <li><a href="#loans" class="nav-link text-gray-400 hover:text-white" data-page="loans">Loans</a>
+                        </li>
+                        <li><a href="#about" class="nav-link text-gray-400 hover:text-white" data-page="about">About</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Help & Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#privacy" class="nav-link text-gray-400 hover:text-white"
+                                data-page="privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Security Information</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3"></i>
+                        <span>info@instantaprove.online.com</span>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 instantaprove.online Finance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const pageSections = document.querySelectorAll('.page-section');
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Handle navigation clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetPage = this.getAttribute('data-page');
+
+                    // Hide all pages
+                    pageSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    // Show target page
+                    document.getElementById(`${targetPage}-section`).classList.add('active');
+
+                    // Update active nav link
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('nav-active');
+                    });
+                    this.classList.add('nav-active');
+
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // Loan calculator functionality
+            const loanAmountSlider = document.querySelector('input[type="range"][value="25000"]');
+            const interestRateSlider = document.querySelector('input[type="range"][value="7.5"]');
+            const loanTermSlider = document.querySelector('input[type="range"][value="5"]');
+
+            const loanAmountValue = document.getElementById('loan-amount-value');
+            const interestRateValue = document.getElementById('interest-rate-value');
+            const loanTermValue = document.getElementById('loan-term-value');
+            const monthlyPayment = document.getElementById('monthly-payment');
+            const totalInterest = document.getElementById('total-interest');
+            const totalPayment = document.getElementById('total-payment');
+
+            function updateLoanCalculator() {
+                const amount = parseInt(loanAmountSlider.value);
+                const rate = parseFloat(interestRateSlider.value) / 100 / 12; // Monthly rate
+                const term = parseInt(loanTermSlider.value) * 12; // Months
+
+                // Update displayed values
+                loanAmountValue.textContent = `$${amount.toLocaleString()}`;
+                interestRateValue.textContent = `${parseFloat(interestRateSlider.value)}%`;
+                loanTermValue.textContent = `${loanTermSlider.value} years`;
+
+                // Calculate loan details
+                if (rate === 0) {
+                    // Handle interest-free loan
+                    const monthly = amount / term;
+                    monthlyPayment.textContent = `$${monthly.toFixed(2)}`;
+                    totalInterest.textContent = '$0.00';
+                    totalPayment.textContent = `$${amount.toLocaleString()}`;
+                } else {
+                    const monthly = amount * rate * Math.pow(1 + rate, term) / (Math.pow(1 + rate, term) - 1);
+                    const total = monthly * term;
+                    const interest = total - amount;
+
+                    monthlyPayment.textContent = `$${monthly.toFixed(2)}`;
+                    totalInterest.textContent = `$${interest.toFixed(2)}`;
+                    totalPayment.textContent = `$${total.toFixed(2)}`;
+                }
+            }
+
+            // Set up event listeners for loan calculator
+            if (loanAmountSlider && interestRateSlider && loanTermSlider) {
+                loanAmountSlider.addEventListener('input', updateLoanCalculator);
+                interestRateSlider.addEventListener('input', updateLoanCalculator);
+                loanTermSlider.addEventListener('input', updateLoanCalculator);
+
+                // Initialize calculator
+                updateLoanCalculator();
+            }
+        });
+    </script>
+
+
+
+    <!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            alert('Right-click is disabled to protect our content.');
+        });
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function (e) {
+            if (
+                (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+                e.key === 'F12' ||
+                (e.metaKey && e.altKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                alert('Access to developer tools and source code is disabled to protect our content.');
+                return false;
+            }
+            return true;
+        };
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('/23205137868/anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+    <script>
+        (function () {
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM fully loaded.");
+
+                function showRewardedAd() {
+                    if (!window.googletag || !googletag.cmd) {
+                        console.error("Google Ad Manager is not properly initialized.");
+                        return;
+                    }
+                    // reward ads
+                    googletag.cmd.push(function () {
+                        try {
+                            const rewardedSlot = googletag
+                                .defineOutOfPageSlot('/23205137868/rewardinter2', googletag.enums.OutOfPageFormat.REWARDED)
+                                .addService(googletag.pubads());
+
+                            googletag.enableServices();
+                            googletag.display(rewardedSlot);
+                            console.log("Attempting to display rewarded ad...");
+
+                            googletag.pubads().addEventListener("rewardedSlotReady", function (evt) {
+                                console.log("Rewarded ad ready.");
+                                evt.makeRewardedVisible();
+                            });
+
+                            googletag.pubads().addEventListener("rewardedSlotClosed", function () {
+                                console.log("Ad closed.");
+                                googletag.destroySlots([rewardedSlot]);
+                            });
+                        } catch (error) {
+                            console.error("Error during ad setup:", error);
+                        }
+                    });
+                }
+
+                // Add 2-second delay before showing the rewarded ad
+                setTimeout(function () {
+                    console.log("2 seconds elapsed, showing rewarded ad...");
+                    showRewardedAd();
+                }, 2000); // 2000 milliseconds = 2 seconds
+            });
+        })();
+    </script>
+
+
+
+</body>
+
+</html>
